@@ -1,0 +1,88 @@
+@import 'variables.styl'
+@import 'mixin.styl'
+// TODO: 样式问题集中
+* {
+  outline: $none; // （轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用
+  margin: $zero;
+  padding: $zero;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  letter-spacing:0.1em;
+}
+html {
+  width:$bfb;
+  height:$bfb;
+}
+body {
+  height :100vh; // ？
+  min-width: 1340px; // ?1340 怎么来的
+  min-height: 600px; // ？
+  font: $twelve $font;
+  line-height: $twelve;
+  clr(body-font-color);
+  bg_color(body-bg);
+  overflow: $auto;
+}
+button, input, optgroup, select, textarea{
+  font: $twelve $font;
+}
+ul li {
+  list-style-type: $none;
+}
+ol, ul {
+  margin-top: $zero;
+  margin-bottom: $zero;
+}
+span, i, em, font, strong,label{
+  display: $inline-block;
+  font-style: normal;
+}
+a {
+  display: $inline-block;
+  cursor: $pointer;
+  text-decoration: $none;
+}
+a, a:hover, a:focus{
+  text-decoration: $none;
+}
+a, a:focus{
+  clr(link-default);
+}
+a:hover{
+  clr(link-hov);
+}
+a:active{
+  clr(link-act);
+}
+a[disabled]{ // ？disabled怎么个意思
+  clr(link-dis-clr);
+  bg_color(link-dis-bg);
+  borcls(link-dis-bor);
+  cursor: $not-allowed; 
+  pointer-events:auto;
+  &:hover,&:active{
+    clr(link-dis-clr);
+    bg_color(link-dis-bg);
+    borcls(link-dis-bor);
+  }
+}
+.table a, .table a:focus{ //？ table 怎么要加 .
+	clr(link-default);
+}
+.table a:hover{
+  clr(link-hov);
+  text-decoration:$underline;
+}
+.table a:active{
+  clr(link-act);
+}
+img {
+  border: $zero;
+  vertical-align: middle;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+h5, h6{
+  font-size:$twelve;
+}
