@@ -1,7 +1,7 @@
 const utils = require('../utils/index')
-const { defaultCompare, Compare } = {...utils}
+const { defaultCompare, Compare } = { ...utils }
 class Node {
-  constructor(key) {
+  constructor (key) {
     this.key = key
     this.left = null
     this.right = null
@@ -9,23 +9,23 @@ class Node {
 }
 
 class BinarySearchTree {
-  constructor(compareFn = defaultCompare) {
+  constructor (compareFn = defaultCompare) {
     this.compareFn = compareFn
     this.root = null
   }
 
   // 向二叉树中插入一个键
-  insert(key) {
-    if(this.root === null || this.root === undefined) {
+  insert (key) {
+    if (this.root === null || this.root === undefined) {
       this.root = new Node(key)
     } else {
       this.insertNode(this.root, key)
     }
   }
 
-  insertNode(node, key) {
+  insertNode (node, key) {
     if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
-      if(node.left === null) {
+      if (node.left === null) {
         node.left = new Node(key)
       } else {
         this.insertNode(node.left, key)
@@ -40,11 +40,11 @@ class BinarySearchTree {
   }
 
   // 中序遍历
-  inOrderTraverse(callback) {
+  inOrderTraverse (callback) {
     this.inOrderTraverseNode(this.root, callback)
   }
 
-  inOrderTraverseNode(node, callback) {
+  inOrderTraverseNode (node, callback) {
     if (node === null || node === undefined) {
       return
     }
@@ -54,12 +54,12 @@ class BinarySearchTree {
   }
 
   // 先序遍历
-  preOrderTraverse(callback) {
+  preOrderTraverse (callback) {
     this.preOrderTraverseNode(this.root, callback)
   }
 
-  preOrderTraverseNode(node, callback) {
-    if(node === null || node === undefined ) {
+  preOrderTraverseNode (node, callback) {
+    if (node === null || node === undefined) {
       return
     }
     callback(node.key)
@@ -68,12 +68,12 @@ class BinarySearchTree {
   }
 
   // 后续遍历
-  postOrderTraverse(callback) {
+  postOrderTraverse (callback) {
     this.postOrderTraverseNode(this.root, callback)
   }
 
-  postOrderTraverseNode(node, callback) {
-    if(node === null || node === undefined) {
+  postOrderTraverseNode (node, callback) {
+    if (node === null || node === undefined) {
       return
     }
     this.postOrderTraverseNode(node.left, callback)
@@ -82,37 +82,45 @@ class BinarySearchTree {
   }
 
   // 搜索树中的最小值
-  min() {
+  min () {
     return this.minNode(this.root)
   }
 
-  minNode(node) {
+  minNode (node) {
     let current = node
-    while(current !== null && current.left !== null && current.left !== undefined) {
+    while (
+      current !== null &&
+      current.left !== null &&
+      current.left !== undefined
+    ) {
       current = current.left
     }
     return current
   }
 
   // 搜索树中的最大值
-  max() {
+  max () {
     return this.maxNode(this.root)
   }
 
-  maxNode(node) {
+  maxNode (node) {
     let current = node
-    while (current !== null && current.right !== null && current.right !== undefined) {
+    while (
+      current !== null &&
+      current.right !== null &&
+      current.right !== undefined
+    ) {
       current = current.right
     }
     return current
   }
 
   // 搜索一个特定值
-  search(key) {
+  search (key) {
     return this.searchNode(this.root, key)
   }
 
-  searchNode(node, key) {
+  searchNode (node, key) {
     if (node === null || node === undefined) {
       return false
     }
@@ -126,23 +134,31 @@ class BinarySearchTree {
   }
 
   // 移除一个节点
-  remove(key) {
+  remove (key) {
     this.root = this.removeNode(this.root, key)
   }
 
-  removeNode(node, key) {
-    
-  }
+  removeNode (node, key) {}
 }
 
 const tree = new BinarySearchTree()
-tree.insert(2)
-tree.insert(5)
-tree.insert(1)
-tree.insert(0)
-tree.insert(9)
 tree.insert(11)
+tree.insert(7)
+tree.insert(15)
+tree.insert(5)
+tree.insert(3)
+tree.insert(9)
 tree.insert(8)
-tree.insert(4)
 tree.insert(10)
-console.log(tree.search(80));
+tree.insert(13)
+tree.insert(12)
+tree.insert(14)
+tree.insert(20)
+tree.insert(18)
+tree.insert(25)
+tree.insert(6)
+console.log(tree.search(80))
+
+tree.inOrderTraverse(node => {
+  console.log(node)
+})
