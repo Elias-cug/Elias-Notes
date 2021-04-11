@@ -1,0 +1,20 @@
+{
+  "name": "elias-notes",
+  "version": "1.0.0",
+  "description": "旨在记录小日常，包括自己学习前端知识的小日常，日后希望增加自己的读书小日常",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elias-cug/Elias-Notes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elias-cug/Elias-Notes/issues"
+  },
+  "homepage": "https://github.com/Elias-cug/Elias-Notes#readme",
+  "dependencies": {}
+}
