@@ -4,7 +4,9 @@
   "description": "旨在记录小日常，包括自己学习前端知识的小日常，日后希望增加自己的读书小日常",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel index.js -o babel.js",
+    "browserify": "browserify index.js -o browserify.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,13 @@
     "url": "https://github.com/Elias-cug/Elias-Notes/issues"
   },
   "homepage": "https://github.com/Elias-cug/Elias-Notes#readme",
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "browserify": "^17.0.0"
+  }
 }
