@@ -2,5 +2,6 @@
   "[markdown]": {
     "editor.formatOnSave": false,
     "editor.wordWrapColumn": 120
-  }
+  },
+  "liveServer.settings.port": 5501
 }
