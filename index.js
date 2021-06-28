@@ -1,18 +1,14 @@
-function baz () {
-  console.log('baz')
-  console.log(this)
-  bar()
+const obj = {
+  a: 'aaaaaa',
+  b: [1, 2, 3]
 }
+Object.freeze(obj)
+Object.freeze(obj.b)
 
-function bar () {
-  console.log('bar')
-  console.log(this)
-  foo()
-}
+const cpObj = obj
 
-function foo () {
-  console.log('foo')
-  console.log(this)
-}
+obj.a = 'ddddd'
+obj.b.push('aa')
 
-baz()
+cpObj.b.push('aaaaaaaa')
+console.log(obj)
