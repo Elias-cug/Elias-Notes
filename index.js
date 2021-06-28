@@ -9,6 +9,3 @@ const cpObj = obj
 
 obj.a = 'ddddd'
 obj.b.push('aa')
-
-cpObj.b.push('aaaaaaaa')
-console.log(obj)
