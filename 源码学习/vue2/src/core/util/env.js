@@ -1,5 +1,3 @@
-import { create } from 'lodash'
-
 export const hasProto = '__proto__' in {}
 
 export const inBrowser = typeof window !== 'undefined'
@@ -64,6 +62,7 @@ export const isServerREndering = () => {
 }
 
 // TODO: window.__VUE_DEVTOOLS_GLOBAL_HOOK__?
+// MASTER: 当有 vue devtools的时候 window 会有 __VUE_DEVTOOLS_GLOBAL_HOOK__ 属性
 export const devtools = inBrowser && window.__VUE_DEVTOOLS_GLOBAL_HOOK__
 
 // MASTER: 是否为原生方法
